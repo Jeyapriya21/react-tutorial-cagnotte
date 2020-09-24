@@ -2,6 +2,8 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Home from './Home';
+import Login from './Login';
+import Choices from './Choices';
 
 class App extends React.Component {
     state = {
@@ -53,25 +55,19 @@ class App extends React.Component {
         );
 
         let ecranNumero2 = (
-            <div>
-                <input type="text" value={this.state.username} onChange={this.handleChangeDynamic('username')} /><br/>
-                <input type="password" value={this.state.password} onChange={this.handleChangeDynamic('password')} /><br/>
-                <button onClick={this.handleLogin}>Se connecter</button>
-            </div>
+            <Login 
+            toto={this.state.username}
+            tata={this.state.password}
+            coucou={this.handleChangeDynamic}
+            toptop={this.handleLogin}
+             />
         );
 
         let ecranNumero3 = (
-            <div>
-                <p>
-                    Félicitations, votre êtes loggés !<br />
-                    Veuillez sélectionner un montant ci-dessous pour la cagnotte de votre ami(e) :
-                </p>
-                <button onClick={this.handleGoEcran5Dynamic(2)}>2 €</button>
-                <button onClick={this.handleGoEcran5Dynamic(5)}>5 €</button>
-                <button onClick={this.handleGoEcran5Dynamic(10)}>10 €</button>
-                <button onClick={this.handleGoEcran5Dynamic(20)}>20 €</button><br />
-                <button onClick={this.handleGoEcranDynamic(4)}>Autre ...</button>
-            </div>
+            <Choices 
+            toto={this.handleGoEcran5Dynamic}
+            tata={this.handleGoEcranDynamic}
+            />
         );
 
         let ecranNumeroFin = (
