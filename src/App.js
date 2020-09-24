@@ -1,6 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Home from './Home';
 
 class App extends React.Component {
     state = {
@@ -48,13 +49,7 @@ class App extends React.Component {
 
     render() {
         let ecranNumero1 = (
-            <div>
-                <p>
-                    Bienvenue dans l'application de cagnotte de cadeaux d'anniversaire !<br />
-                        Ce lien concerne la cagnotte de l'anniversaire de Sophie Dupont
-                </p>
-                <button onClick={this.handleGoEcranDynamic(2)}>Participer</button>
-            </div>
+            <Home notreHandle={this.handleGoEcranDynamic(2)} />
         );
 
         let ecranNumero2 = (
