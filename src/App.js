@@ -52,21 +52,9 @@ class App extends React.Component {
         })
     }
 
-    handleChangeUsername = (event) => {
+    handleChangeDynamic = (nomDeLaVariable) => (event) => {
         this.setState({
-            username: event.target.value
-        })
-    }
-
-    handleChangePassword = (event) => {
-        this.setState({
-            password: event.target.value
-        })
-    }
-
-    handleChangeMontant = (event) => {
-        this.setState({
-            montant: event.target.value
+            [nomDeLaVariable]: event.target.value
         })
     }
 
@@ -83,8 +71,8 @@ class App extends React.Component {
 
         let ecranNumero2 = (
             <div>
-                <input type="text" value={this.state.username} onChange={this.handleChangeUsername} /><br/>
-                <input type="password" value={this.state.password} onChange={this.handleChangePassword} /><br/>
+                <input type="text" value={this.state.username} onChange={this.handleChangeDynamic('username')} /><br/>
+                <input type="password" value={this.state.password} onChange={this.handleChangeDynamic('password')} /><br/>
                 <button onClick={this.handleGoEcran3}>Se connecter</button>
             </div>
         );
@@ -115,7 +103,7 @@ class App extends React.Component {
 
         let ecranNumero4 = (
             <div>
-                <input type="number" value={this.state.montant} onChange={this.handleChangeMontant}  /><br/>
+                <input type="number" value={this.state.montant} onChange={this.handleChangeDynamic('montant')}  /><br/>
                 <button onClick={this.handleGoEcran5}>Valider</button>
             </div>
         );
