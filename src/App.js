@@ -4,6 +4,7 @@ import './App.css';
 import Home from './Home';
 import Login from './Login';
 import Choices from './Choices';
+import Ending from './Ending';
 
 class App extends React.Component {
     state = {
@@ -71,13 +72,11 @@ class App extends React.Component {
         );
 
         let ecranNumeroFin = (
-            <div>
-                <p>
-                    Votre participation de {this.state.montant} € a bien été enregistré !<br />
-                    Votre adresse email {this.state.username} sera utilisée pour toute communication
-                </p>
-                <button onClick={this.handleRestart}>Recommencer</button>
-            </div>
+            <Ending
+            tiptip={this.state.montant}
+            hello={this.state.username}
+            hihi={this.handleRestart}
+            />
         );
 
         let ecranNumero4 = (
