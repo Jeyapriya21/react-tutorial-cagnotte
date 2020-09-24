@@ -19,9 +19,9 @@ class App extends React.Component {
         })
     }
 
-    handleGoEcran2 = () => {
+    handleGoEcranDynamic = (numero) => () => {
         this.setState({
-            numeroEcran: 2
+            numeroEcran: numero
         })
     }
 
@@ -33,21 +33,9 @@ class App extends React.Component {
         }
     }
 
-    handleGoEcran4 = () => {
-        this.setState({
-            numeroEcran: 4
-        })
-    }
-
     handleGoEcran5Dynamic = (valeur) => () => {
         this.setState({
             montant: valeur,
-            numeroEcran: 5
-        })
-    }
-
-    handleGoEcran5 = () => {
-        this.setState({
             numeroEcran: 5
         })
     }
@@ -65,7 +53,7 @@ class App extends React.Component {
                     Bienvenue dans l'application de cagnotte de cadeaux d'anniversaire !<br />
                         Ce lien concerne la cagnotte de l'anniversaire de Sophie Dupont
                 </p>
-                <button onClick={this.handleGoEcran2}>Participer</button>
+                <button onClick={this.handleGoEcranDynamic(2)}>Participer</button>
             </div>
         );
 
@@ -87,7 +75,7 @@ class App extends React.Component {
                 <button onClick={this.handleGoEcran5Dynamic(5)}>5 €</button>
                 <button onClick={this.handleGoEcran5Dynamic(10)}>10 €</button>
                 <button onClick={this.handleGoEcran5Dynamic(20)}>20 €</button><br />
-                <button onClick={this.handleGoEcran4}>Autre ...</button>
+                <button onClick={this.handleGoEcranDynamic(4)}>Autre ...</button>
             </div>
         );
 
@@ -104,7 +92,7 @@ class App extends React.Component {
         let ecranNumero4 = (
             <div>
                 <input type="number" value={this.state.montant} onChange={this.handleChangeDynamic('montant')}  /><br/>
-                <button onClick={this.handleGoEcran5}>Valider</button>
+                <button onClick={this.handleGoEcranDynamic(5)}>Valider</button>
             </div>
         );
 
