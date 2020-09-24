@@ -1,11 +1,11 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Home from './Home';
-import Login from './Login';
-import Choices from './Choices';
-import Ending from './Ending';
-import UserAmount from './UserAmount';
+import Home from './components/Home';
+import Login from './components/Login';
+import Choices from './components/Choices';
+import Ending from './components/Ending';
+import UserAmount from './components/UserAmount';
 
 class App extends React.Component {
     state = {
