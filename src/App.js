@@ -10,7 +10,7 @@ class App extends React.Component {
         montant: 0
     }
 
-    handleGoEcran1 = () => {
+    handleRestart = () => {
         this.setState({
             numeroEcran: 1,
             username: '',
@@ -25,7 +25,7 @@ class App extends React.Component {
         })
     }
 
-    handleGoEcran3 = () => {
+    handleLogin = () => {
         if (this.state.username == 'projet@project.com' && this.state.password == 'topito') {
             this.setState({
                 numeroEcran: 3
@@ -61,7 +61,7 @@ class App extends React.Component {
             <div>
                 <input type="text" value={this.state.username} onChange={this.handleChangeDynamic('username')} /><br/>
                 <input type="password" value={this.state.password} onChange={this.handleChangeDynamic('password')} /><br/>
-                <button onClick={this.handleGoEcran3}>Se connecter</button>
+                <button onClick={this.handleLogin}>Se connecter</button>
             </div>
         );
 
@@ -85,7 +85,7 @@ class App extends React.Component {
                     Votre participation de {this.state.montant} € a bien été enregistré !<br />
                     Votre adresse email {this.state.username} sera utilisée pour toute communication
                 </p>
-                <button onClick={this.handleGoEcran1}>Recommencer</button>
+                <button onClick={this.handleRestart}>Recommencer</button>
             </div>
         );
 
