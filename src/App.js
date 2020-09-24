@@ -5,6 +5,7 @@ import Home from './Home';
 import Login from './Login';
 import Choices from './Choices';
 import Ending from './Ending';
+import UserAmount from './UserAmount';
 
 class App extends React.Component {
     state = {
@@ -80,10 +81,11 @@ class App extends React.Component {
         );
 
         let ecranNumero4 = (
-            <div>
-                <input type="number" value={this.state.montant} onChange={this.handleChangeDynamic('montant')}  /><br/>
-                <button onClick={this.handleGoEcranDynamic(5)}>Valider</button>
-            </div>
+            <UserAmount
+            taptap={this.state.montant}
+            toto={this.handleChangeDynamic}
+            copcop={this.handleGoEcranDynamic}
+            />
         );
 
         let ecran = null;
